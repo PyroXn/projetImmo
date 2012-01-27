@@ -1,0 +1,78 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    text-align: center ;
+    font: 0.8em "Trebuchet MS", helvetica, sans-serif ;
+    background: #ffccad;
+}
+h1 {
+    margin: 0;
+}
+div#conteneur
+{
+    width: 770px;
+    min-height: 500px;
+    margin: 0 auto ;
+    text-align: left ;
+    border: 2px solid  #d39667;
+    background: #fff ;
+}
+div#conteneur ul#menu {
+    margin-top: 0;
+    margin-left: 0;
+}
+div#conteneur ul#menu li {
+    width: 150px;
+    line-height: 24px;
+    list-style: none;
+    background: #fbeace;
+    margin-bottom: 1px;
+    margin-left: -40px;
+    text-align: center;
+}
+div#conteneur ul#menu li a {
+    text-decoration: none;
+    padding-top: 5px;
+}
+
+div#colonneDroite {
+    float: left;
+    width: 150px;
+
+    margin-right: 5px;
+}
+h1#header
+{
+    height: 200px;
+    background: url("./images/banniere.jpg") no-repeat;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+div#contenu
+{
+    display: block;
+    padding-right: 5px;
+}
+div#contenu p
+{
+    text-align: justify ;
+    text-indent: 2em ;
+    line-height: 1.7em ;
+}
+
+div#footer
+{
+    width: 770px;
+    margin: 0 ;
+    text-align: center;
+    color: #8a0 ;
+}
+
+/* RECHERCHE RAPIDE */
+.rapide {
+    display: block;
+    text-align: center;
+    line-height: 24px;
+    background: #fbeace;
+}
