@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (!isset($_GET['p'])) {
     $_GET['p'] = "home";
 }
@@ -9,7 +10,7 @@ if ($_GET['p'] == 'home') {
 }
 
 function menuLeft() {
-    $contenu = '            <div id="colonneDroite">
+    $contenu = '<div id="colonneDroite">
                 <nav>
                     <ul id="menu">
                         <li><a href="#">Accueil</a></li>
@@ -49,9 +50,18 @@ function home() {
 function recherche() {
     $contenu = '';
 }
+
 function display($title,$description,$contenu) {
     include('./templates/haut.php');
     echo $contenu;
     include('./templates/bas.php');
+}
+
+function forbidden() {
+    $title = 'Accès interdit';
+    $description = 'Accès interdit';
+    $contenu = '<h1>Accès interdit</h1>
+                            <p>Merci de bien vouloir retourner à <a href="index.php?p=home">l\'accueil</a></p>';
+    display($title,$description,$contenu);
 }
 ?>
