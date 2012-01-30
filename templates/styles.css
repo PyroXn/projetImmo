@@ -76,3 +76,12 @@ div#footer
     line-height: 24px;
     background: #fbeace;
 }
+
+.clearboth {
+    clear: both;
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    width: 100%;
+}
