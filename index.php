@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+include_once './class/connexion.class.php';
+$connexion = new Connexion();
+
 if (!isset($_GET['p'])) {
     $_GET['p'] = "home";
 }
@@ -7,6 +11,12 @@ if ($_GET['p'] == 'home') {
     home();
 } elseif($_GET['p'] == 'admin') {
     include_once './pages/admin.php'; admin();
+} elseif($_GET['p'] == 'accueil') {
+    include_once './pages/admin.php'; accueil();
+} elseif($_GET['p'] == 'login') {
+    include_once './pages/admin.php'; login();
+} elseif($_GET['p'] == 'ajouterbien') {
+    include_once './pages/admin.php'; ajouterbien();
 }
 
 function menuLeft() {
