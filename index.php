@@ -17,8 +17,15 @@ if ($_GET['p'] == 'home') {
     include_once './pages/admin.php'; login();
 } elseif($_GET['p'] == 'ajouterbien') {
     include_once './pages/admin.php'; ajouterbien();
+<<<<<<< HEAD
 } elseif($_GET['p'] == 'ajoutertype') { 
     include_once './pages/admin.php'; ajoutertype();
+=======
+} elseif($_GET['p'] == 'contact') {
+    contact();
+} elseif($_GET['p'] == 'contactsend') {
+    contactSend();
+>>>>>>> 6361dd8677ad94b21acbd01e7462731975370ded
 }
 
 // AJAX
@@ -35,7 +42,7 @@ function menuLeft() {
                         <li><a href="#">Partenariat</a></li>
                         <li><a href="#">Infos pratiques</a></li>
                         <li><a href="#">Plan d\'accès</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="index.php?p=contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div id="rechercherapide">
@@ -81,6 +88,7 @@ function forbidden() {
     display($title,$description,$contenu);
 }
 
+<<<<<<< HEAD
 // AJAX
 function loadville() {
     $sql = 'SELECT * FROM cp WHERE CP="'.$_GET['cp'].'"';
@@ -100,4 +108,75 @@ function loadregion() {
     }
     echo $contenu;
 }
+=======
+function contact() {
+    $title = 'Contactez nous';
+    $description = 'Contactez nous';
+    $contenu = '<h1>Contactez nous</h1>
+                    <form class="encadrement" method="POST" action="index.php?p=contactsend">
+                        <legend>Civilité* :</legend>
+                        <input type="radio" name="civilite" value="Mme">Mme</input>            
+                        <input type="radio" name="civilite" value="Mr">Mr</input>
+                        <input type="radio" name="civilite" value="Mlle">Mlle</input>
+                        
+                        <div><legend>Nom* :</legend><input type="text" name="Nom" id="nom" placeholder="nom"><span class="error"></span></div>
+                        <div><legend>Prénom* :</legend><input type="text" name="Prénom" id="nom" placeholder="prenom"><span class="error"></span></div>
+                        <div><legend>Adresse* :</legend><input type="text" name="Adresse" id="nom" placeholder="adresse"><span class="error"></span></div>
+                        <div><legend>Code postal* :</legend><input type="text" name="Code postal" id="nom" placeholder="cp"><span class="error"></span></div>
+                        <div><legend>Ville* :</legend><input type="text" name="ville" id="nom" placeholder="ville"><span class="error"></span></div>
+                        <div><legend>Pays* :</legend><input type="text" name="Pays" id="nom" placeholder="pays"><span class="error"></span></div>
+                        <div><legend>Téléphone :</legend><input type="text" name="Télephone" id="nom" placeholder="telephone"><span class="error"></span></div>
+                        <div><legend>Email* :</legend><input type="text" name="Email" id="nom" placeholder="email"><span class="error"></span></div>
+                        <div>
+                            <legend>Votre question* :</legend>
+                            <textarea name="question" id="question" placeholder="Question"></textarea><span class="error"></span>
+                        </div>
+                        <input type="submit" id="submitContact" value="Envoyer">
+                    </form>';
+    display($title,$description,$contenu);
+
+}
+
+
+function contactSend() {
+    $destinataire = "contact@mydevhouse.com";
+    $civilite = $_POST['civilite'];
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $adresse = $_POST['adresse'];
+    $cp = $_POST['cp'];
+    $ville = $_POST['ville'];
+    $pays = $_POST['pays'];
+    $telephone = $_POST['telephone'];
+    $email = $_POST['email'];
+    $question = $_POST['question'];
+
+    $message_htlm = '<html>
+                    <head></head>
+                    <body>
+
+                        <h3>Message de :</h3>'.$civilite.' '.$nom.' '.$prenom.' +
+                        <h3>Adresse :</h3>'.$adresse.' '.$cp.' '.$cp.' ('.$pays.')<br/>
+                        <h3>Téléphone :</h3>'.$telephone.'<br />
+                        <h3>Email :</h3>'.$email.'<br />
+                        <h3>Question :</h3>'.$question.'<br />
+                     </body>
+                     </html>';
+
+    $headers = "From: $email\n";
+    $headers .= "Reply-To: $email\n";
+    $headers .= "Content-Type: text/html; charset=\"UTF-8\"";
+
+    // envois du mail    mail($destinataire, $objet, $message_html, $headers);
+
+    $title = 'Message envoyé';
+    $description = 'Contactez nous';
+    $contenu = '<h1>Nous contacter</h1>';
+    $contenu .= 'Votre message a bien été envoyé. Nous y répondrons dans les plus brefs délais.';
+    display($title, $contenu,$description);
+
+}
+
+
+>>>>>>> 6361dd8677ad94b21acbd01e7462731975370ded
 ?>
