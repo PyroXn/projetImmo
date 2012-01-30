@@ -17,7 +17,13 @@ if ($_GET['p'] == 'home') {
     include_once './pages/admin.php'; login();
 } elseif($_GET['p'] == 'ajouterbien') {
     include_once './pages/admin.php'; ajouterbien();
+} elseif($_GET['p'] == 'ajoutertype') { 
+    include_once './pages/admin.php'; ajoutertype();
 }
+
+// AJAX
+elseif($_GET['p'] == 'loadville') {    loadville(); }
+elseif($_GET['p'] == 'loadregion') {    loadregion(); }
 
 function menuLeft() {
     $contenu = '<div id="colonneDroite">
@@ -73,5 +79,25 @@ function forbidden() {
     $contenu = '<h1>Accès interdit</h1>
                             <p>Merci de bien vouloir retourner à <a href="index.php?p=home">l\'accueil</a></p>';
     display($title,$description,$contenu);
+}
+
+// AJAX
+function loadville() {
+    $sql = 'SELECT * FROM cp WHERE CP="'.$_GET['cp'].'"';
+    $req = mysql_query($sql);
+    $contenu = '';
+    while($data = mysql_fetch_assoc($req)) {
+        $contenu .= '<option value="'.$data['VILLE'].'">'.$data['VILLE'].'</option>';
+    }
+    echo $contenu;
+}
+function loadregion() {
+    $sql = 'SELECT * FROM cp WHERE CP="'.$_GET['cp'].'"';
+    $req = mysql_query($sql);
+    $contenu = '';
+    while($data = mysql_fetch_assoc($req)) {
+        $contenu .= '<option value="'.$data['REGION'].'">'.$data['REGION'].'</option>';
+    }
+    echo $contenu;
 }
 ?>
