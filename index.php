@@ -17,15 +17,12 @@ if ($_GET['p'] == 'home') {
     include_once './pages/admin.php'; login();
 } elseif($_GET['p'] == 'ajouterbien') {
     include_once './pages/admin.php'; ajouterbien();
-<<<<<<< HEAD
 } elseif($_GET['p'] == 'ajoutertype') { 
     include_once './pages/admin.php'; ajoutertype();
-=======
 } elseif($_GET['p'] == 'contact') {
     contact();
 } elseif($_GET['p'] == 'contactsend') {
     contactSend();
->>>>>>> 6361dd8677ad94b21acbd01e7462731975370ded
 }
 
 // AJAX
@@ -88,7 +85,6 @@ function forbidden() {
     display($title,$description,$contenu);
 }
 
-<<<<<<< HEAD
 // AJAX
 function loadville() {
     $sql = 'SELECT * FROM cp WHERE CP="'.$_GET['cp'].'"';
@@ -108,7 +104,7 @@ function loadregion() {
     }
     echo $contenu;
 }
-=======
+
 function contact() {
     $title = 'Contactez nous';
     $description = 'Contactez nous';
@@ -178,5 +174,4 @@ function contactSend() {
 }
 
 
->>>>>>> 6361dd8677ad94b21acbd01e7462731975370ded
 ?>
