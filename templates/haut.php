@@ -5,6 +5,8 @@
         <title><?php echo $title; ?></title>
          <meta name="description" content="<?php echo $description; ?>" />
         <link rel="stylesheet" type="text/css" href="./templates/styles.css" media="screen" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript" src="./js/javascript.js"></script>
     </head>
 
     <body>
