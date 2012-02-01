@@ -111,23 +111,23 @@ function contact() {
     $contenu = '<h1>Contactez nous</h1>
                     <form class="encadrement" method="POST" action="index.php?p=contactsend">
                         <legend>Civilité* :</legend>
-                        <input type="radio" name="civilite" value="Mme">Mme</input>            
+                        <input type="radio" name="civilite" value="Mme" checked="checked">Mme</input>            
                         <input type="radio" name="civilite" value="Mr">Mr</input>
                         <input type="radio" name="civilite" value="Mlle">Mlle</input>
                         
-                        <div><legend>Nom* :</legend><input type="text" name="Nom" id="nom" placeholder="nom"><span class="error"></span></div>
-                        <div><legend>Prénom* :</legend><input type="text" name="Prénom" id="nom" placeholder="prenom"><span class="error"></span></div>
-                        <div><legend>Adresse* :</legend><input type="text" name="Adresse" id="nom" placeholder="adresse"><span class="error"></span></div>
-                        <div><legend>Code postal* :</legend><input type="text" name="Code postal" id="nom" placeholder="cp"><span class="error"></span></div>
-                        <div><legend>Ville* :</legend><input type="text" name="ville" id="nom" placeholder="ville"><span class="error"></span></div>
-                        <div><legend>Pays* :</legend><input type="text" name="Pays" id="nom" placeholder="pays"><span class="error"></span></div>
-                        <div><legend>Téléphone :</legend><input type="text" name="Télephone" id="nom" placeholder="telephone"><span class="error"></span></div>
-                        <div><legend>Email* :</legend><input type="text" name="Email" id="nom" placeholder="email"><span class="error"></span></div>
+                        <div><legend>Nom* :</legend><input type="text" name="nom" id="nom" placeholder="nom"><span class="error"></span></div>
+                        <div><legend>Prénom* :</legend><input type="text" name="prenom" id="prenom" placeholder="prenom"><span class="error"></span></div>
+                        <div><legend>Adresse* :</legend><input type="text" name="adresse" id="adresse" placeholder="adresse"><span class="error"></span></div>
+                        <div><legend>Code postal* :</legend><input type="text" name="cp" id="cp" placeholder="cp"><span class="error"></span></div>
+                        <div><legend>Ville* :</legend><input type="text" name="ville" id="ville" placeholder="ville"><span class="error"></span></div>
+                        <div><legend>Pays* :</legend><input type="text" name="pays" id="pays" placeholder="pays"><span class="error"></span></div>
+                        <div><legend>Téléphone :</legend><input type="text" name="telephone" id="telephone" placeholder="telephone"><span class="error"></span></div>
+                        <div><legend>Email* :</legend><input type="text" name="email" id="email" placeholder="email"><span class="error"></span></div>
                         <div>
                             <legend>Votre question* :</legend>
                             <textarea name="question" id="question" placeholder="Question"></textarea><span class="error"></span>
                         </div>
-                        <input type="submit" id="submitContact" value="Envoyer">
+                        <input type="submit" id="submit" value="Envoyer">
                     </form>';
     display($title,$description,$contenu);
 
@@ -146,8 +146,9 @@ function contactSend() {
     $telephone = $_POST['telephone'];
     $email = $_POST['email'];
     $question = $_POST['question'];
-
-    $message_htlm = '<html>
+    $objet = 'Contact';
+    
+    $message_html = '<html>
                     <head></head>
                     <body>
 
@@ -163,7 +164,8 @@ function contactSend() {
     $headers .= "Reply-To: $email\n";
     $headers .= "Content-Type: text/html; charset=\"UTF-8\"";
 
-    // envois du mail    mail($destinataire, $objet, $message_html, $headers);
+    // envois du mail    
+    mail($destinataire, $objet, $message_html, $headers);
 
     $title = 'Message envoyé';
     $description = 'Contactez nous';
@@ -172,6 +174,5 @@ function contactSend() {
     display($title, $contenu,$description);
 
 }
-
 
 ?>
