@@ -1,80 +1,25 @@
-body
-{
+html, body, div, img, li, form, fieldset, input, textarea, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, table, blockquote, hr {
     margin: 0;
     padding: 0;
-    text-align: center ;
-    font: 0.8em "Trebuchet MS", helvetica, sans-serif ;
-    background: #ffccad;
 }
-h1 {
-    margin: 0;
-}
-div#conteneur
-{
-    width: 770px;
-    min-height: 500px;
-    margin: 0 auto ;
-    text-align: left ;
-    border: 2px solid  #d39667;
-    background: #fff ;
-}
-div#conteneur ul#menu {
-    margin-top: 0;
-    margin-left: 0;
-}
-div#conteneur ul#menu li {
-    width: 150px;
-    line-height: 24px;
-    list-style: none;
-    background: #fbeace;
-    margin-bottom: 1px;
-    margin-left: -40px;
-    text-align: center;
-}
-div#conteneur ul#menu li a {
+
+a:link, a:visited, a:hover, a:active, a:focus {
     text-decoration: none;
-    padding-top: 5px;
 }
 
-div#colonneDroite {
-    float: left;
-    width: 150px;
-
-    margin-right: 5px;
-}
-h1#header
-{
-    height: 200px;
-    background: url("./images/banniere.jpg") no-repeat;
-    margin-bottom: 0;
-    margin-top: 0;
-}
-div#contenu
-{
-    display: block;
-    padding-right: 5px;
-}
-div#contenu p
-{
-    text-align: justify ;
-    text-indent: 2em ;
-    line-height: 1.7em ;
+body {
+    font-family: 'Trebuchet MS',Arial,Helvetica,Sans-serif;
+    line-height: 20px;
+    word-spacing: 1px;
+    font-size: 12px;
+    background-color: grey;
 }
 
-div#footer
-{
-    width: 770px;
-    margin: 0 ;
-    text-align: center;
-    color: #8a0 ;
-}
-
-/* RECHERCHE RAPIDE */
-.rapide {
-    display: block;
-    text-align: center;
-    line-height: 24px;
-    background: #fbeace;
+#header, #content, #footer {
+    margin: 0 auto;
+    width: 960px;
+    background-color: white;
+    padding: 10px;
 }
 
 .clearboth {
@@ -86,38 +31,216 @@ div#footer
     width: 100%;
 }
 
-input[type=submit] {    
-
-    height: auto;
-    margin-left: 465px;
-    font-weight: bold;
-    padding: 6px 10px;
-    cursor: pointer;
-    color: #fff;
-
-    text-align: center;
-    text-shadow: 0 -1px 1px #64799e;
-
-    background: #a5b8da;
-    background: -moz-linear-gradient(top, #a5b8da 0%, #7089b3 100%);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a5b8da), to(#7089b3));
-
-    border: 1px solid #5c6f91;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-
-    -moz-box-shadow: inset 0 1px 0 0 #aec3e5;
-    -webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
-    box-shadow: inset 0 1px 0 0 #aec3e5;
+ul {
+    list-style: none outside none;
 }
 
-#noSubmit {
-    background: #eee;
-    background: -moz-linear-gradient(top, #747474 0%, #747474 100%);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#747474), to(#747474));
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    cursor: auto;
+
+/****Content****/
+#content {
+}
+
+h1 {
+    color: #214f68;
+    font-size: 26px;
+    font-family: "kulturista-web-1","kulturista-web-2";
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    text-align: justify;
+    line-height: 20px;
+    word-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/*****BANDEAU GAUCHE*****/
+
+
+input[type=text] {
+    display: block;
+    margin-top: 20px;
+    width: 193px;
+    height: 25px;
+}
+
+input[type=checkbox] {
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+input[type=submit] {
+    display: block;
+    margin: 10px 0 10px 32px;
+    height: 25px;
+    width: 140px;
+}
+
+.mini_texte {
+    margin-top: 2px;
+    margin-left: 2px;
+    font-size: 10px;
+    color: white;
+}
+
+.mini_h2 {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+#search {
+    margin: 0 auto;
+    width: 500px;
+}
+
+#search span {
+    color: white;
+    vertical-align: 2px;
+}
+#search input {
+    text-align: center;
+    margin-left: 10px;
+/*    margin: 10px auto;*/
+}
+
+#search input[type=submit], #search input[type=text] {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*****CARROUSEL*****/
+/*.carrousel {
+    width: 884px;
+    height: 250px;
+}
+.carrousel .slide {
+    display: block;
+    float: left;
+    width: 884px;
+    height: 250px;
+    position: relative;
+}
+.carrousel .slide .info {
+    display: block;
+    color: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:  rgba(0,0,0,0.8);
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 20px;
+}
+
+.slide h1 {
+    position: absolute;
+    top: 20px;
+    left: 250px;
+}
+
+.slide .paragraphe_liste {
+    position: absolute;
+    left: 250px;
+    top: 70px;
+    font-size: 18px;
+    color: black;
+}
+
+.slide .miniature {
+    position: absolute;
+    left: 80px;
+    top: 20px;
+}
+
+.pagination {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    top: -30px;
+}
+
+.pagination a {
+    display: inline-block;
+    background: url("./images/bouton_pagination.png") 0 0 no-repeat transparent;
+    width: 8px;
+    height: 8px;
+    margin-left: 3px;
+}
+
+.pagination a.selected {
+    background-position: 0 -8px;
+    cursor: default;
+}
+
+#slider {
+    margin-bottom: 30px;
+}*/
+.image_carousel {
+    padding: 15px 0 15px 40px;
+    position: relative;
+}
+.image_carousel img {
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 9px;
+    margin: 7px;
+    display: block;
+    float: left;
+}
+a.prev, a.next {
+    background: url(./images/miscellaneous_sprite.png) no-repeat transparent;
+    width: 45px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    top: 85px;
+}
+a.prev {			
+    left: -22px;
+    background-position: 0 0; }
+a.prev:hover {		
+    background-position: 0 -50px; 
+}
+a.prev.disabled {	
+    background-position: 0 -100px !important;  
+}
+a.next {			
+    right: -22px;
+    background-position: -50px 0; 
+}
+a.next:hover {		
+    background-position: -50px -50px; 
+}
+a.next.disabled {	
+    background-position: -50px -100px !important;  
+}
+a.prev.disabled, a.next.disabled {
+    cursor: default;
+}
+
+a.prev span, a.next span {
+    display: none;
+}
+.pagination {
+    text-align: center;
+}
+.pagination a {
+    background: url(./images/miscellaneous_sprite.png) 0 -300px no-repeat transparent;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px 0 0;
+    display: inline-block;
+}
+.pagination a.selected {
+    background-position: -25px -300px;
+    cursor: default;
+}
+.pagination a span {
+    display: none;
+}
+.clearfix {
+    float: none;
+    clear: both;
 }

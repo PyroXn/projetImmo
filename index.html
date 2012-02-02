@@ -1,45 +1,184 @@
-<!DOCTYPE html">
-<html lang="fr">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns ="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
     <head>
-        <meta charset="utf-8" />
         <title>ProjetImmo</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript" src="./js/caroufredsel.js"></script>
+        <script type="text/javascript">
+            jQuery(function($){
+                $('#carrousel').carouFredSel({
+                    //                    direction: 'up',
+                    //                    items: 4,
+                    //                    scroll: {
+                    //                        fx: 'directscroll',
+                    //                        duration: 1000
+                    //                        
+                    //                    },
+                    //                    width: 884,
+                    //                    pagination : {
+                    //                        container: '#pagination',
+                    //                        anchorBuilder : function(nr, item) {
+                    //                            var src = $('img', item).attr('src');
+                    //                            src = src.replace('884/250', '100/100');
+                    //                            return '<a href="#'+nr+'"></a>';
+                    //                        }
+                    //                    }
+                    circular: false,
+                    infinite: false,
+                    auto    : false,
+                    scroll  : {
+                        items   : "page"
+                    },
+                    prev    : {
+                        button  : "#carrousel_prev",
+                        key     : "left"
+                    },
+                    next    : {
+                        button  : "#carrousel_next",
+                        key     : "right"
+                    },
+                    pagination  : "#carrousel_pag"
+                });
+            });
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Language" content="fr" />
         <link rel="stylesheet" type="text/css" href="./templates/styles.css" media="screen" />
+
     </head>
-
     <body>
-        <div id="conteneur">    
-            <h1 id="header"></h1>
-            <div id="colonneDroite">
-                <nav>
+        <div id="header">
+            <div id="slider">
+                <!--                <div class="carrousel" id="carrousel">
+                                    <div class="slide">
+                                        <img src="http://lorempixel.com/221/250/city/1"/>
+                                        <img src="http://lorempixel.com/221/250/city/2"/>
+                                        <img src="http://lorempixel.com/221/250/city/3"/>
+                                        <img src="http://lorempixel.com/221/250/city/4"/>
+                                        <img src="http://lorempixel.com/221/250/city/5"/>
+                                        <span class="info">La pépiniére d\'entreprise de mexy - Nos bureaux</span>
+                                    </div>
+                                    <div class="slide" id="site_web">
+                                        <img src="http://lorempixel.com/221/250/city/6"/>
+                                        <img src="http://lorempixel.com/221/250/city/7"/>
+                                        <img src="http://lorempixel.com/221/250/city/8"/>
+                                        <img src="http://lorempixel.com/221/250/city/9"/>
+                                        <img src="http://lorempixel.com/221/250/city/10"/>
+                                        <span class="info titre_liste">Création de site internet</span>
+                                    </div>
+                                </div>
+                                <div id="pagination" class="pagination"></div>-->
 
-                    <ul id="menu">
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">Ventes</a></li>
-                        <li><a href="#">Location</a></li>
-                        <li><a href="#">Partenariat</a></li>
-                        <li><a href="#">Infos pratiques</a></li>
-                        <li><a href="#">Plan d'accès</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div id="contenu">
-                <h1>Recherche</h1>
-                <ul id="recherche">
-                    <li><label>Type de bien</label>
-                        <select name="type">
-                            <option>Appartement</option>
-                            <option>Maison</option>
-                        </select></li>
-                    <li><label>Budget</label>
-                        <select>
-                            <option>0-500€</option></select>
-                    </li>
-                    <li><label>Code Postal</label><input type="text" size="5" /></li>
-                </ul>
-            </div>
+                <div class="image_carousel">
+                    <div id="carrousel">
+                        <img src="http://lorempixel.com/140/140/city/1" alt="" width="140" height="140" />
+                        <img src="http://lorempixel.com/140/140/city/2" alt="" width="140" height="140" />
+                        <img src="http://lorempixel.com/140/140/city/3" alt="" width="140" height="140" />
+                        <img src="http://lorempixel.com/140/140/city/4" alt="" width="140" height="140" />
+                        <img src="http://lorempixel.com/140/140/city/5" alt="" width="140" height="140" />
+                        <img src="http://lorempixel.com/140/140/city/6" alt="" width="140" height="140" />
+                        <img src="http://lorempixel.com/140/140/city/7" alt="" width="140" height="140" />
+                        <img src="http://lorempixel.com/140/140/city/8" alt="" width="140" height="140" />
+                        <img src="http://lorempixel.com/140/140/city/9" alt="" width="140" height="140" />
+                        <img src="http://lorempixel.com/140/140/city/10" alt="" width="140" height="140" />
+                        <img src="http://lorempixel.com/140/140/nature/1" alt="" width="140" height="140" />
+                        <img src="http://lorempixel.com/140/140/nature/2" alt="" width="140" height="140" />
+                    </div>
+                    <div class="clearfix"></div>
+                    <a class="prev" id="carrousel_prev" href="#"><span>prev</span></a>
+                    <a class="next" id="carrousel_next" href="#"><span>next</span></a>
+                    <div class="pagination" id="carrousel_pag"></div>
+                </div>
 
-            <div id="footer">&copy; copyright</div>
+            </div>
+        </div>
+
+        <div id="content">
+            <ul id="menu">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Ventes</a></li>
+                <li><a href="#">Location</a></li>
+                <li><a href="#">Partenariat</a></li>
+                <li><a href="#">Infos pratiques</a></li>
+                <li><a href="#">Plan d'accès</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            
+            <!--            <ul id="recherche">
+                            <li><label>Type de bien</label>
+                                <select name="type">
+                                    <option>Appartement</option>
+                                    <option>Maison</option>
+                                </select></li>
+                            <li><label>Budget</label>
+                                <select>
+                                    <option>0-500€</option></select>
+                            </li>
+                            <li><label>Code Postal</label><input type="text" size="5" /></li>
+                        </ul>-->
+            <form id="search" method="post" action="">
+                
+                <!--A chercher dans la bdd des type de bien avec boucle php créer les label et les check box !!!!!-->
+                <div id="type_bien">
+                    <label class="mainLabel">type(s) de bien</label>
+                    <label class="subLabel">
+                    <input class="checkbox" type="checkbox" />Maisons</label>
+                    <label class="subLabel">
+                    <input class="checkbox" type="checkbox" />Appartements</label>
+                    <label class="subLabel">
+                    <input class="checkbox" type="checkbox" />Terrains</label>
+                </div>
+
+                <!--Faire une fonction JS allant chercher des valeurs et empéchant de faire des choses absurde comme budget de 250k à 100k ...-->
+                <div id="budget">
+                    <label class="mainLabel">budget</label>
+                    <span class="text">de</span>
+                    <select>
+                      <option>50.000</option>
+                      <option>100.000</option>
+                      <option>150.000</option>
+                    </select>
+                    <span class="text">à</span>
+                    <select>
+                      <option>150.000</option>
+                      <option>200.000</option>
+                      <option>250.000</option>
+                    </select> 
+                    <span class="text euro">&euro;</span>
+                </div>
+                <div id="code_postal">
+                    <input type="text" placeholder="Code postal"/>
+                </div>
+                <div>
+                    <input type="submit" class="submit sprites" value="Envoyer"/>
+                </div>
+            </form>
+
+            <div class="contenu">
+                <h1>
+                    Accueil
+                </h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt ligula nec orci posuere auctor. 
+                    Proin metus ipsum, ultrices eu hendrerit nec, accumsan ultrices tellus. Integer dictum elementum nulla, 
+                    nec luctus ante lobortis et. Fusce quis felis metus. Mauris lorem turpis, venenatis et ornare in, 
+                    auctor quis libero. Proin id nibh urna. Quisque lacus tellus, feugiat eget rutrum id, adipiscing vitae lacus.
+                </p>
+                <p>
+                    Quisque in vestibulum nulla. Pellentesque nisl augue, condimentum ut gravida vitae, euismod nec dui. 
+                    Proin vestibulum sollicitudin risus, sed congue augue dictum vehicula. Fusce at nunc quis risus 
+                    scelerisque egestas quis nec nunc. Praesent lobortis leo auctor dolor fermentum nec tristique est volutpat. 
+                    Cras dui nisi, ultrices vel tincidunt in, ullamcorper nec diam. Praesent commodo commodo odio, at interdum 
+                    tellus luctus at. Duis facilisis turpis elementum diam sollicitudin et ultrices orci molestie. 
+                </p>
+            </div>
+        </div>
+        <div class="clearboth"></div>
+        <div id="footer">
+            <div id="contenu_footer">
+                <div class="copyright">&copy; 2012 My Dev House - <a href="">Mentions légales</a></div>
+            </div>
         </div>
     </body>
 </html>
