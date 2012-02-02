@@ -55,59 +55,74 @@ p {
     margin-bottom: 10px;
 }
 
-/*****BANDEAU GAUCHE*****/
-
-
-input[type=text] {
-    display: block;
-    margin-top: 20px;
-    width: 193px;
-    height: 25px;
+fieldset {
+    border: 0 none;
+    padding: 0 15px;
 }
 
-input[type=checkbox] {
-    margin-top: 20px;
-    margin-right: 5px;
+/*****BANDEAU GAUCHE*****/
+
+#menu {
+    float: left;
+    width: 150px;
+}
+
+#contenu {
+    float: left;
+    width: 650px;
+    margin: 10px;
+}
+
+
+
+#search {
+    position: relative;
+    padding: 10px;
+    border: 3px solid #d2eda4;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+#search .text-discret {
+    position: absolute;
+    bottom: 0px;
+    right: 18px;
+    font-size: 10px;
+    color: blue;
+
+}
+
+#search fieldset {
+    
+    float: left;
+    width: 150px;
 }
 
 input[type=submit] {
-    display: block;
-    margin: 10px 0 10px 32px;
-    height: 25px;
-    width: 140px;
+    position: absolute;
+    bottom: 18px;
+    right: 15px;
+    background-image:url(./images/submit.png);
+    background-position: 4px;
+    background-color: #d2eda4;
+    background-repeat: no-repeat;
+    border: 2px solid #CCC;
+    padding: 5px 5px 5px 30px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+   
 }
 
-.mini_texte {
-    margin-top: 2px;
-    margin-left: 2px;
-    font-size: 10px;
-    color: white;
+input[type=submit]:hover {
+    border-color: #48a103;
+    cursor: pointer;
 }
 
-.mini_h2 {
-    font-size: 12px;
-    font-weight: normal;
-}
-
-#search {
-    margin: 0 auto;
-    width: 500px;
-}
-
-#search span {
-    color: white;
-    vertical-align: 2px;
-}
-#search input {
-    text-align: center;
-    margin-left: 10px;
-/*    margin: 10px auto;*/
-}
-
-#search input[type=submit], #search input[type=text] {
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /*****CARROUSEL*****/
 /*.carrousel {
@@ -244,3 +259,15 @@ a.prev span, a.next span {
     float: none;
     clear: both;
 }
+
+
+
+
+
+
+
+
+
+
+
+
