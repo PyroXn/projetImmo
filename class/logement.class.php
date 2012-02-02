@@ -3,17 +3,24 @@
 class Logement {
     
     private $id;
+    private $denomination;
     private $description;
     private $prix;
     private $type;
+    private $adresse;
     private $codepostal;
     private $ville;
     private $region;
     private $nbpiece;
     private $nbchambre;
+    private $nbparking;
+    private $typechauffage;
     private $surfacehabitable;
     private $surfaceares;
+    private $ges;
     private $dpe;
+    private $dateajout;
+    private $coupdecoeur;
     
     function __construct($id=null, $description=null, $prix=null, $type=null,$codepostal=null, $ville=null, $region=null, $nbpiece=null, $nbchambre=null, $surfacehabitable=null, $surfaceares=null, $dpe=null) {
         $this->id = $id;
@@ -38,6 +45,14 @@ class Logement {
         $this->id = $id;
     }
 
+    public function getDenomination() {
+        return $this->denomination;
+    }
+
+    public function setDenomination($denomination) {
+        $this->denomination = $denomination;
+    }
+
     public function getDescription() {
         return $this->description;
     }
@@ -60,6 +75,14 @@ class Logement {
 
     public function setType($type) {
         $this->type = $type;
+    }
+
+    public function getAdresse() {
+        return $this->adresse;
+    }
+
+    public function setAdresse($adresse) {
+        $this->adresse = $adresse;
     }
 
     public function getCodepostal() {
@@ -102,6 +125,22 @@ class Logement {
         $this->nbchambre = $nbchambre;
     }
 
+    public function getNbparking() {
+        return $this->nbparking;
+    }
+
+    public function setNbparking($nbparking) {
+        $this->nbparking = $nbparking;
+    }
+
+    public function getTypechauffage() {
+        return $this->typechauffage;
+    }
+
+    public function setTypechauffage($typechauffage) {
+        $this->typechauffage = $typechauffage;
+    }
+
     public function getSurfacehabitable() {
         return $this->surfacehabitable;
     }
@@ -118,6 +157,14 @@ class Logement {
         $this->surfaceares = $surfaceares;
     }
 
+    public function getGes() {
+        return $this->ges;
+    }
+
+    public function setGes($ges) {
+        $this->ges = $ges;
+    }
+
     public function getDpe() {
         return $this->dpe;
     }
@@ -125,6 +172,24 @@ class Logement {
     public function setDpe($dpe) {
         $this->dpe = $dpe;
     }
+
+    public function getDateajout() {
+        return $this->dateajout;
+    }
+
+    public function setDateajout($dateajout) {
+        $this->dateajout = $dateajout;
+    }
+
+    public function getCoupdecoeur() {
+        return $this->coupdecoeur;
+    }
+
+    public function setCoupdecoeur($coupdecoeur) {
+        $this->coupdecoeur = $coupdecoeur;
+    }
+
+
 
 
 }

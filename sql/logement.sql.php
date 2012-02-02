@@ -6,9 +6,14 @@ function saveLogement(Logement $logement) {
     $req = mysql_query($sql);
 }
 
+/**
+ *
+ * @return un tableau avec les logement coup de coeur
+ */
 function getCoupDeCoueur() {
-    $sql = 'SELECT * FROM logement WHERE coupdecoeur = true AND LIMIT 0,100 ORDER BY id';
+    $sql = 'SELECT * FROM logement WHERE coupdecoeur = true ORDER BY dateajout LIMIT 0,2';
     $req = mysql_query($sql);
+    return $req;
 }
 
 ?>
