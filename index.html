@@ -5,6 +5,13 @@
         <title>ProjetImmo</title>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
         <script language="javascript" type="text/javascript" src="./js/caroufredsel.js"></script>
+        <script language="javascript" type="text/javascript" src="./js/customInput.jquery.js"></script>
+        <script type="text/javascript">
+            // Run the script on DOM ready:
+            $(function(){
+                $('input').customInput();
+            });
+        </script>
         <script type="text/javascript">
             jQuery(function($){
                 $('#carrousel').carouFredSel({
@@ -25,8 +32,8 @@
                     //                        }
                     //                    }
                     circular: false,
-                    infinite: false,
-                    auto    : false,
+                    infinite: true,
+                    auto    : true,
                     scroll  : {
                         items   : "page"
                     },
@@ -45,6 +52,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="Content-Language" content="fr" />
         <link rel="stylesheet" type="text/css" href="./templates/styles.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./templates/customInput.css" media="screen" />
 
     </head>
     <body>
@@ -95,16 +103,18 @@
         </div>
 
         <div id="content">
-            <ul id="menu">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Ventes</a></li>
-                <li><a href="#">Location</a></li>
-                <li><a href="#">Partenariat</a></li>
-                <li><a href="#">Infos pratiques</a></li>
-                <li><a href="#">Plan d'accès</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            
+            <div id="menu">
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Ventes</a></li>
+                    <li><a href="#">Location</a></li>
+                    <li><a href="#">Partenariat</a></li>
+                    <li><a href="#">Infos pratiques</a></li>
+                    <li><a href="#">Plan d'accès</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
             <!--            <ul id="recherche">
                             <li><label>Type de bien</label>
                                 <select name="type">
@@ -117,45 +127,70 @@
                             </li>
                             <li><label>Code Postal</label><input type="text" size="5" /></li>
                         </ul>-->
-            <form id="search" method="post" action="">
-                
-                <!--A chercher dans la bdd des type de bien avec boucle php créer les label et les check box !!!!!-->
-                <div id="type_bien">
-                    <label class="mainLabel">type(s) de bien</label>
-                    <label class="subLabel">
-                    <input class="checkbox" type="checkbox" />Maisons</label>
-                    <label class="subLabel">
-                    <input class="checkbox" type="checkbox" />Appartements</label>
-                    <label class="subLabel">
-                    <input class="checkbox" type="checkbox" />Terrains</label>
-                </div>
+            <div id="contenu">
+<!-- TEST AVEC RADIO BUTTON               
+                <form>	
+                    <fieldset>
+                        <legend>TEST</legend>
+                        <input type="radio" name="opinions" id="radio-1" value="1" />
+                        <label for="radio-1">1</label>
 
-                <!--Faire une fonction JS allant chercher des valeurs et empéchant de faire des choses absurde comme budget de 250k à 100k ...-->
-                <div id="budget">
-                    <label class="mainLabel">budget</label>
-                    <span class="text">de</span>
-                    <select>
-                      <option>50.000</option>
-                      <option>100.000</option>
-                      <option>150.000</option>
-                    </select>
-                    <span class="text">à</span>
-                    <select>
-                      <option>150.000</option>
-                      <option>200.000</option>
-                      <option>250.000</option>
-                    </select> 
-                    <span class="text euro">&euro;</span>
-                </div>
-                <div id="code_postal">
-                    <input type="text" placeholder="Code postal"/>
-                </div>
-                <div>
-                    <input type="submit" class="submit sprites" value="Envoyer"/>
-                </div>
-            </form>
 
-            <div class="contenu">
+                        <input type="radio" name="opinions" id="radio-2" value="1" />
+                        <label for="radio-2">2</label>
+
+                        <input type="radio" name="opinions" id="radio-3" value="1" />
+                        <label for="radio-3">3</label>
+                    </fieldset>
+                </form>-->
+
+                <form id="search" method="post" action="">
+                    <h1>Recherche Rapide</h1>
+                    <!--A chercher dans la bdd des type de bien avec boucle php créer les label et les check box !!!!!-->
+                    <fieldset>
+                        <legend>Type de bien</legend>
+                        <input type="checkbox" name="type_bien" id="check-1" value="maisons" />
+                        <label for="check-1">Maisons</label>
+
+                        <input type="checkbox" name="type_bien" id="check-2" value="appartements" />
+                        <label for="check-2">Appartements</label>
+
+                        <input type="checkbox" name="type_bien" id="check-3" value="terrains" />
+                        <label for="check-3">Terrains</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Type d'offre</legend>
+                        <input type="checkbox" name="genre" id="check-4" value="achat" />
+                        <label for="check-4">Achat</label>
+
+                        <input type="checkbox" name="genre" id="check-5" value="location" />
+                        <label for="check-5">Location</label>
+                    </fieldset>
+                    
+
+                    <!--Faire une fonction JS allant chercher des valeurs et empéchant de faire des choses absurde comme budget de 250k à 100k ...-->
+                    <fieldset>
+                        <legend>Prix</legend>
+                        <select>
+                            <option>50.000</option>
+                            <option>100.000</option>
+                            <option>150.000</option>
+                        </select>
+                        <span class="text">à</span>
+                        <select>
+                            <option>150.000</option>
+                            <option>200.000</option>
+                            <option>250.000</option>
+                        </select> 
+                        <span class="text euro">&euro;</span>
+                    </fieldset>
+                    <div>
+                        <input type="submit" class="submit sprites" value="Rechercher"/>
+                        <a href="" class="text-discret">Recherche avancée</a>
+                    </div>
+                    <div class="clearboth"></div>
+                </form>
+
                 <h1>
                     Accueil
                 </h1>
@@ -173,8 +208,10 @@
                     tellus luctus at. Duis facilisis turpis elementum diam sollicitudin et ultrices orci molestie. 
                 </p>
             </div>
+            <div class="clearboth"></div>
+
         </div>
-        <div class="clearboth"></div>
+
         <div id="footer">
             <div id="contenu_footer">
                 <div class="copyright">&copy; 2012 My Dev House - <a href="">Mentions légales</a></div>
