@@ -6,6 +6,7 @@
 function isOk() {
     return isset($_SESSION['user']);
 }
+
 function admin() {
     $title = '';
     $description = '';
