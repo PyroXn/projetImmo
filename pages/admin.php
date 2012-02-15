@@ -72,40 +72,29 @@ function ajouterbien() {
         $title = 'Ajouter un bien';
         $description = '';
         $contenu = menuAdmin();
-        $contenu .= '<form method="POST" action="index.php?p=ajouterbien"><div><label>Description du bien</label>
-                                <textarea name="description"></textarea></div>
-                               <div> <label>Prix/Loyer</label>
-                                <input type="text" name="prix"></input></div>
-                                <div><label>Type</label>
-                                <select name="type">';
-        foreach($tabType as $tab) {
-            $contenu .= '<option value="'.$tab->getId().'">'.$tab->getLibelle().'</option>';
-        }
-
-        $contenu .= '</select></div>
-                                <div><label>Code Postal</label>
-                                <input type="text" name="cp" id="cp" size="5"></input></div>
-                                <div><label>Ville</label>
-                                <select id="ville" name="ville"></select></div>
-                                <div><label>Region</label>
-                                <select name="region" id="region">
-                                </select></div>
-                                <div><label>Nombre de piece</label>
-                                <input type="text" size="3" name="nbpiece"></input></div>
-                                <div><label>Nombre de chambre</label>
-                                <input type="text" size="3" name="nbchambre"></input></div>
-                                <div><label>Surface habitable</label>
-                                <input type="text" name="surfacehab"></input></div>
-                                <div><label>Surface en ares</label>
-                                <input type="text" name="surfaceares"></input></div>
-                                <div><label>DPE</label>
-                                <input type="text" placeholder="Gaz à effet de serre" size="2" name="dpe"></input></div>
+        $contenu .= '<form method="POST" action="index.php?p=ajouterbien">
+            <div><input type="text" name="denomination" placeholder="Dénomination" /></div>
+                                <div><textarea name="description" placeholder="Description"></textarea></div>
+                                <div><input type="text" name="surfacehabitable" placeholder="Surface habitable" /></div>
+                                <div><input type="text" name="surfaceterrain"  placeholder="Surface du terrain" /></div>
+                                <div><input type="text" name="nbpiece" placeholder="Nombre de pièce" /></div>
+                                <div><input type="text" name="nbchambre" placeholder="Nombre de chambre" /></div>
+                                <div><select name="typechauffage"><option value>Gaz</option></select></div>
+                                <div><select name="typelogement"><option>Appartement</option></select></div>
+                                <div><textarea name="adresse" placeholder="Adresse"></textarea></div>
+                                <div><input type="text" name="cp" id="cp" size="5" placeholder="Code postal"></input></div>
+                                <div><select id="ville" name="ville"></select></div>
+                                <div><select name="region" id="region"></select></div>
+                                <div><input type="text" placeholder="Gaz à effet de serre" size="2" name="ges"></input></div>
+                                <div><input type="text" placeholder="DPE" name="dpe"></input></div>
+                                <div><select name="disponible"><option>Oui</option></select></div>
+                                <div><select name="id_proprietaire"></select></div>
                                 <input type="submit" name="ajouterbien" value="Envoyer"></form>';
         display($title,$description,$contenu);
     } else {
         include_once './class/logement.class.php';
         include_once './sql/logement.sql.php';
-        $logement = new Logement("",$_POST['description'],$_POST['prix'],$_POST['type'],$_POST['cp'],$_POST['ville'],$_POST['region'],$_POST['nbpiece'],$_POST['nbchambre'],$_POST['surfacehab'],$_POST['surfaceares'],$_POST['dpe']);
+        $logement = new Logement("", $_POST['denomination'], $_POST['description'], $_POST['surfacehabitable'], $_POST['surfaceterrain'], $_POST['nbpiece'], $_POST['nbchambre'], $_POST['typelogement'], $_POST['typechauffage'], $_POST['adresse'], $_POST['cp'], $_POST['ville'], $_POST['region'], $_POST['ges'], $_POST['dpe'], $_POST['dateajout'], $_POST['disponible'], $_POST['id_proprietaire']);
         saveLogement($logement);
         
         $title = '';

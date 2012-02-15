@@ -3,9 +3,9 @@
  *
  * @return Type Retourne un tableau avec tout les types
  */
-function loadType() {
+function loadType($categorie) {
     include_once './class/type.class.php';
-    $sql = 'SELECT * FROM type ORDER BY id';
+    $sql = 'SELECT * FROM type WHERE categorie="'.$categorie.'" ORDER BY id';
     $req = mysql_query($sql);
     $tabType = array();
     while($data = mysql_fetch_assoc($req)) {

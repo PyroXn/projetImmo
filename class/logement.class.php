@@ -1,42 +1,47 @@
 <?php
 
 class Logement {
-    
+
     private $id;
     private $denomination;
     private $description;
-    private $prix;
-    private $type;
-    private $adresse;
-    private $codepostal;
-    private $ville;
-    private $region;
+    private $surfacehabitable;
+    private $surfaceterrain;
     private $nbpiece;
     private $nbchambre;
-    private $nbparking;
+    private $typelogement;
     private $typechauffage;
-    private $surfacehabitable;
-    private $surfaceares;
+    private $adresse;
+    private $cp;
+    private $ville;
+    private $region;
     private $ges;
     private $dpe;
     private $dateajout;
-    private $coupdecoeur;
-    
-    function __construct($id=null, $description=null, $prix=null, $type=null,$codepostal=null, $ville=null, $region=null, $nbpiece=null, $nbchambre=null, $surfacehabitable=null, $surfaceares=null, $dpe=null) {
+    private $disponible;
+    private $id_proprietaire;
+
+    function __construct($id=null, $denomination=null, $description=null, $surfacehabitable=null, $surfaceterrain=null, $nbpiece=null, $nbchambre=null, $typelogement=null, $typechauffage=null, $adresse=null, $cp=null, $ville=null, $region=null, $ges=null, $dpe=null, $dateajout=null, $disponible=null, $id_proprietaire=null) {
         $this->id = $id;
+        $this->denomination = $denomination;
         $this->description = $description;
-        $this->prix = $prix;
-        $this->type = $type;
-        $this->codepostal = $codepostal;
-        $this->ville = $ville;
-        $this->region = $region;
+        $this->surfacehabitable = $surfacehabitable;
+        $this->surfaceterrain = $surfaceterrain;
         $this->nbpiece = $nbpiece;
         $this->nbchambre = $nbchambre;
-        $this->surfacehabitable = $surfacehabitable;
-        $this->surfaceares = $surfaceares;
+        $this->typelogement = $typelogement;
+        $this->typechauffage = $typechauffage;
+        $this->adresse = $adresse;
+        $this->cp = $cp;
+        $this->ville = $ville;
+        $this->region = $region;
+        $this->ges = $ges;
         $this->dpe = $dpe;
+        $this->dateajout = $dateajout;
+        $this->disponible = $disponible;
+        $this->id_proprietaire = $id_proprietaire;
     }
-    
+
     public function getId() {
         return $this->id;
     }
@@ -61,52 +66,20 @@ class Logement {
         $this->description = $description;
     }
 
-    public function getPrix() {
-        return $this->prix;
+    public function getSurfacehabitable() {
+        return $this->surfacehabitable;
     }
 
-    public function setPrix($prix) {
-        $this->prix = $prix;
+    public function setSurfacehabitable($surfacehabitable) {
+        $this->surfacehabitable = $surfacehabitable;
     }
 
-    public function getType() {
-        return $this->type;
+    public function getSurfaceterrain() {
+        return $this->surfaceterrain;
     }
 
-    public function setType($type) {
-        $this->type = $type;
-    }
-
-    public function getAdresse() {
-        return $this->adresse;
-    }
-
-    public function setAdresse($adresse) {
-        $this->adresse = $adresse;
-    }
-
-    public function getCodepostal() {
-        return $this->codepostal;
-    }
-
-    public function setCodepostal($codepostal) {
-        $this->codepostal = $codepostal;
-    }
-
-    public function getVille() {
-        return $this->ville;
-    }
-
-    public function setVille($ville) {
-        $this->ville = $ville;
-    }
-
-    public function getRegion() {
-        return $this->region;
-    }
-
-    public function setRegion($region) {
-        $this->region = $region;
+    public function setSurfaceterrain($surfaceterrain) {
+        $this->surfaceterrain = $surfaceterrain;
     }
 
     public function getNbpiece() {
@@ -125,12 +98,12 @@ class Logement {
         $this->nbchambre = $nbchambre;
     }
 
-    public function getNbparking() {
-        return $this->nbparking;
+    public function getTypelogement() {
+        return $this->typelogement;
     }
 
-    public function setNbparking($nbparking) {
-        $this->nbparking = $nbparking;
+    public function setTypelogement($typelogement) {
+        $this->typelogement = $typelogement;
     }
 
     public function getTypechauffage() {
@@ -141,20 +114,36 @@ class Logement {
         $this->typechauffage = $typechauffage;
     }
 
-    public function getSurfacehabitable() {
-        return $this->surfacehabitable;
+    public function getAdresse() {
+        return $this->adresse;
     }
 
-    public function setSurfacehabitable($surfacehabitable) {
-        $this->surfacehabitable = $surfacehabitable;
+    public function setAdresse($adresse) {
+        $this->adresse = $adresse;
     }
 
-    public function getSurfaceares() {
-        return $this->surfaceares;
+    public function getCp() {
+        return $this->cp;
     }
 
-    public function setSurfaceares($surfaceares) {
-        $this->surfaceares = $surfaceares;
+    public function setCp($cp) {
+        $this->cp = $cp;
+    }
+
+    public function getVille() {
+        return $this->ville;
+    }
+
+    public function setVille($ville) {
+        $this->ville = $ville;
+    }
+
+    public function getRegion() {
+        return $this->region;
+    }
+
+    public function setRegion($region) {
+        $this->region = $region;
     }
 
     public function getGes() {
@@ -181,16 +170,22 @@ class Logement {
         $this->dateajout = $dateajout;
     }
 
-    public function getCoupdecoeur() {
-        return $this->coupdecoeur;
+    public function getDisponible() {
+        return $this->disponible;
     }
 
-    public function setCoupdecoeur($coupdecoeur) {
-        $this->coupdecoeur = $coupdecoeur;
+    public function setDisponible($disponible) {
+        $this->disponible = $disponible;
     }
 
+    public function getId_proprietaire() {
+        return $this->id_proprietaire;
+    }
 
-
+    public function setId_proprietaire($id_proprietaire) {
+        $this->id_proprietaire = $id_proprietaire;
+    }
 
 }
+
 ?>
